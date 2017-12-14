@@ -1,0 +1,39 @@
+.setfromPage{
+    background: #FFF;
+    min-width: 200px;
+    flex-grow: 1;
+    border-right: 1px solid #CCC;
+    align-self: stretch;
+}
+.setfromPage .title{
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #CCC;
+}
+.setfrom .nav{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 0 20px;
+    line-height: 40px;
+    border-bottom: 1px solid #CCC;
+}
+.setfrom .li{
+    line-height: 40px;
+    border-bottom: 1px solid #EEE;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 0 20px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+}

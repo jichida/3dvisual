@@ -1,0 +1,36 @@
+.bomPage{
+    min-width: 200px;
+}
+.bomPage{
+    background: #FFF;
+    min-width: 200px;
+    flex-shrink: 0;
+    border-right: 1px solid #CCC;
+}
+.bomPage .title{
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #CCC;
+}
+.bomPage .search{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    border-bottom: 1px solid #CCC
+}
+.bomPage .search input{
+    text-align: center;
+    flex-grow: 1;
+    margin:10px;
+    border:1px solid #CCC;
+    line-height: 30px;
+}
+.bomlist img{
+    width: 200px;
+}
+
+
