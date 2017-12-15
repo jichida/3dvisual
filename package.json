@@ -15,6 +15,7 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-scripts": "1.0.14",
     "react-tap-event-plugin": "^2.0.1",
+    "react-three": "^0.9.7",
     "redux": "^3.7.2",
     "redux-act": "^1.4.1",
     "redux-devtools": "^3.4.0",
@@ -23,7 +24,8 @@
     "redux-form": "^6.8.0",
     "redux-polyglot": "^0.6.2",
     "redux-saga": "^0.15.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "three": "^0.88.0"
   },
   "scripts": {
     "start": "react-scripts start",
