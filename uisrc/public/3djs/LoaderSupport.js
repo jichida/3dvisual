@@ -4,7 +4,7 @@
   */
 
 'use strict';
-var THREE = require('three');
+
 if ( THREE.LoaderSupport === undefined ) { THREE.LoaderSupport = {} }
 
 /**
@@ -1562,5 +1562,3 @@ THREE.LoaderSupport.WorkerDirector = (function () {
 	return WorkerDirector;
 
 })();
-let OBJLoader2 = THREE.OBJLoader2;
-export default OBJLoader2;

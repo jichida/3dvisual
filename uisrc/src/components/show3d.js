@@ -10,6 +10,7 @@ import * as THREE from "three";
 import MTLLoader from "../3djs/MTLLoader";
 import OBJLoader from "../3djs/OBJLoader";
 import {loadurl} from '../util';
+import Iframe from 'react-iframe'
 
 const promisifyLoad = (loader) => {
   function onProgress(xhr) {
@@ -31,17 +32,18 @@ class Page extends React.Component {
           cameraPosition: new THREE.Vector3(0, 0, 2),
         };
     }
-
     componentDidMount(){
         // this.props.dispatch(create3dmodel());
         this.init();
     }
     componentWillUpdate(nextProps, nextState) {
+
       const {cameraPosition} = nextState;
       console.log(cameraPosition);
       this.camera.position.copy(cameraPosition);
       this.pointLight.position.copy(cameraPosition);
     }
+
 
     init = () => {
       const {width, height} = this.getRendererSize();
@@ -114,7 +116,7 @@ class Page extends React.Component {
 
     getRendererSize() {
       const p = 0.9;
-      const width = window.innerWidth * p;
+      const width = window.innerWidth-400-201;
       const height = window.innerHeight * p;
 
       return {width, height};
@@ -207,17 +209,20 @@ class Page extends React.Component {
                 <div className="title">
                     MSQ摆台
                 </div>
-                <div className="Viewer"
+                <div 
+                    className="Viewer"
                     ref={(root) => {
                       this.root = root;
-                    }}/>
+                    }} 
+                    style={{display: "none"}}
+                    />
             </div>
         );
     }
 }
 
 const mapStateToProps = ({}) => {
-  const fileuri = '/2.zip';//try 1.zip
+  const fileuri = '/1.zip';//try 1.zip
   return {fileuri};
 }
 export default connect(mapStateToProps)(Page);

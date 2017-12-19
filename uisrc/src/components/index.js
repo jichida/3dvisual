@@ -15,6 +15,11 @@ class Page extends React.Component {
             innerHeight: window.innerHeight
         };
     }
+    componentWillMount(){
+        let threeiframe = document.getElementById("threeiframe");
+        console.log(threeiframe);
+        threeiframe.style.display="none";
+    }
     componentDidMount() {
         window.addEventListener('resize', this.onWindowResize);
     }

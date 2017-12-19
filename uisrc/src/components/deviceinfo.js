@@ -18,10 +18,17 @@ class Page extends React.Component {
             innerHeight: window.innerHeight
         };
     }
+    componentWillMount() {
+        let threeiframe = document.getElementById("threeiframe");
+        threeiframe.style.display="block";
+        threeiframe.style.width=`${window.innerWidth-200-401}px`;
+        threeiframe.style.height=`${window.innerHeight}px`;
+    }
     componentDidMount() {
         window.addEventListener('resize', this.onWindowResize);
     }
     componentWillUnmount() {
+        document.getElementById("threeiframe").style.display="none";
         window.removeEventListener('resize', this.onWindowResize);
     }
 
@@ -31,6 +38,9 @@ class Page extends React.Component {
             this.setState({
                 innerHeight: window.innerHeight
             });
+            let threeiframe = document.getElementById("threeiframe");
+            threeiframe.style.width=`${window.innerWidth-200-401}px`;
+            threeiframe.style.height=`${window.innerHeight}px`;
 
         }, 10)
     }
