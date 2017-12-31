@@ -8,6 +8,7 @@ import { Route,Redirect,Switch} from 'react-router-dom';
 
 import Index from './index.js';
 import Deviceinfo from './deviceinfo';
+import View3d from './view3d';
 
 class AppRoot extends React.Component {
     componentWillMount() {}
@@ -15,11 +16,12 @@ class AppRoot extends React.Component {
     render() {
         return (
             <div className="AppContainer">
+                <View3d />
                 <Switch>
                     <Route exact path="/" component={()=>(<Redirect to="/index"/>)} />
                     <Route path="/index" component={Index} />
                     <Route path="/deviceinfo/:deviceid" component={Deviceinfo} />
-                </Switch>
+                </Switch>    
             </div>
         );
     }

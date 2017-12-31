@@ -18,15 +18,17 @@ class Page extends React.Component {
             innerHeight: window.innerHeight
         };
     }
-    componentWillMount() {
+    componentDidMount() {
         let threeiframe = document.getElementById("threeiframe");
         threeiframe.style.display="block";
         threeiframe.style.width=`${window.innerWidth-200-401}px`;
         threeiframe.style.height=`${window.innerHeight}px`;
+
+          window.addEventListener('resize', this.onWindowResize);
     }
-    componentDidMount() {
-        window.addEventListener('resize', this.onWindowResize);
-    }
+    // componentDidMount() {
+    //     window.addEventListener('resize', this.onWindowResize);
+    // }
     componentWillUnmount() {
         document.getElementById("threeiframe").style.display="none";
         window.removeEventListener('resize', this.onWindowResize);
@@ -46,7 +48,7 @@ class Page extends React.Component {
     }
     render() {
         return (
-            <div 
+            <div
                 className="indexPage AppPage"
                 style={{
                     height : `${this.state.innerHeight}px`,
