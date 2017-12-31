@@ -5,7 +5,7 @@ import React  from 'react';
 import { Provider } from 'react-redux';
 
 import store  from './store';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import {
     Route,
@@ -15,17 +15,15 @@ import {history} from './store';
 
 import AppRoot from '../components/approot.js';
 
-let Root = (props)=>
-    (<MuiThemeProvider>
-        <Provider store={store}>
-            <div>
-                <ConnectedRouter history={history}>
-                    <Route path="/" component={AppRoot}/>
-                </ConnectedRouter>
-            </div>
-        </Provider>
-        </MuiThemeProvider>
-    );
 
+let Root = (props)=>(
+    <Provider store={store}>
+        <div>
+            <ConnectedRouter history={history}>
+                <Route path="/" component={AppRoot}/>
+            </ConnectedRouter>
+        </div>
+    </Provider>
+);
 
 export default Root;

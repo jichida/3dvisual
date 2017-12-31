@@ -30,6 +30,7 @@
     "three": "^0.88.0"
   },
   "scripts": {
+    "buildcp": "react-scripts build && cp -r build/. ../app/render && rm -R build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
