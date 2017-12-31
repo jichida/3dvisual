@@ -2,6 +2,7 @@
   "name": "weixinsrc",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "antd": "^3.0.1",
     "coordtransform": "^2.1.2",
