@@ -1,0 +1,165 @@
+.maincontent {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+}
+.maincontent .mainwamp{
+    flex-grow: 1;
+    height: 1px;
+    width: 70%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background: rgba(0,0,0,.5);
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+}
+.mainwamp .cont{
+    padding: 0 10%;
+}
+.mainwamp .title{
+    font-size: 40px;
+    text-align: center;
+    color: #FFF;
+    background: none;
+    padding: 50px 0;
+}
+.mainwamp .formc,
+.mainwamp .c{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+}
+.mainwamp .cont{
+    align-self: stretch;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+}
+.mainwamp .cont .formc{
+    flex-grow: 1;
+    background: rgba(255,255,255,.7);
+    margin-bottom: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+}
+.mainwamp .cont .formc .tit{
+    text-align: center;
+    line-height: 80px;
+    font-size: 23px;
+}
+.mainwamp .cont .formc .form{
+    width: 70%;
+    margin: 0 auto;
+}
+.mainwamp .cont .formc .form .li{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.mainwamp .cont .formc .form .li{
+    margin-bottom: 30px;
+}
+.mainwamp .cont .formc .form .btn{
+    text-align: center;
+    margin-left: 100px;
+}
+.mainwamp .cont .formc .form .btn span{
+    display: block;
+    background: #009900;
+    color: #FFF;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 6px;
+    margin: auto;
+
+}
+.mainwamp .cont .formc .form .li > span{
+    width: 80px;
+    display: block;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 18px;
+}
+.mainwamp .c .tt{
+    font-size: 18px;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+.mainwamp .c .li.img img{
+    width: 60%;
+    margin-bottom: 15px;
+}
+.mainwamp .c .l{
+    flex-grow: 1;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    flex-shrink: 0;
+}
+.mainwamp .c .l .li{
+    color: #FFF;
+    line-height: 30px;
+}
+.mainwamp .c .p{
+    word-break:break-all;
+    width: 100%;
+    color: #FFF;
+    line-height: 30px;
+}
+.mainwamp .c .r .btn {
+    padding-top: 20px;
+}
+.mainwamp .c .r .btn img{
+    border-radius: 10px;
+}
+
+
+
+
+
+

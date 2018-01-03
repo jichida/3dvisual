@@ -18,10 +18,10 @@ class Page extends React.Component {
 					// this.recalcAspectRatio();
 					this.scene = null;
 					this.cameraDefaults = {
-						posCamera: new THREE.Vector3( 0.0, 175.0, 500.0 ),
+						posCamera: new THREE.Vector3( 0.0, 10000.0, 20000.0 ),
 						posCameraTarget: new THREE.Vector3( 0, 0, 0 ),
 						near: 0.1,
-						far: 10000,
+						far: 1000000,
 						fov: 45
 					};
 					this.camera = null;
@@ -37,8 +37,18 @@ class Page extends React.Component {
 					this.renderer.setClearColor( 0xFFFFFF );
 					this.scene = new THREE.Scene();
 					this.camera = new THREE.PerspectiveCamera( this.cameraDefaults.fov, this.aspectRatio, this.cameraDefaults.near, this.cameraDefaults.far );
+					
+					// this.camera.setFocalLength ( 330 );
+					// this.camera.lookAt( this.cameraTarget );
+
 					this.resetCamera();
 					this.controls = new THREE.TrackballControls( this.camera, this.renderer.domElement );
+					// this.controls = new THREE.FirstPersonControls( this.camera, this.renderer.domElement );
+
+					// this.controls.movementSpeed = 500;  
+		   //          this.controls.lookSpeed = 0.1;  
+		   //          this.controls.lookVertical = true;
+
 					var ambientLight = new THREE.AmbientLight( 0xFFFFFF );
 					var directionalLight1 = new THREE.DirectionalLight( 0xC0C090 );
 					var directionalLight2 = new THREE.DirectionalLight( 0xC0C090 );
@@ -47,17 +57,43 @@ class Page extends React.Component {
 					this.scene.add( directionalLight1 );
 					this.scene.add( directionalLight2 );
 					this.scene.add( ambientLight );
-					var helper = new THREE.GridHelper( 1200, 60, 0xFF4444, 0x404040 );
-					this.scene.add( helper );
+					// var helper = new THREE.GridHelper( 1200000, 60, 0xFF4444, 0x404040 );
+					// this.scene.add( helper );
 				};
 				OBJLoader2Example.prototype.initContent = function () {
 					var modelName = 'female02';
 					this._reportProgress( { detail: { text: 'Loading: ' + modelName } } );
 					var scope = this;
 					var objLoader = new THREE.OBJLoader2();
-					var callbackOnLoad = function ( event ) {
+					var callbackOnLoad = ( event )=> {
 						scope.scene.add( event.detail.loaderRootNode );
+						console.log(event);
 						console.log( 'Loading complete: ' + event.detail.modelName );
+
+						var objects = event.detail.loaderRootNode;
+						// console.log(objects)
+						// objects.children[10].geometry.computeBoundingBox(); 
+						// console.log(objects);
+						// console.log(objects.children[10].geometry.boundingBox.max.x);
+						// objects.rotation.x = THREE.Math.degToRad( 45 );  
+						// objects.rotation.y = THREE.Math.degToRad( 45 );
+						console.log(scope.cameraTarget);
+						// for ( var i = 0; i < objects.children.length; i ++ ) {
+						// 	objects.children[i].lookAt( scope.cameraTarget );
+						// }
+
+						this.camera.aspect = this.aspectRatio;
+						// console.log(this.cameraTarget);
+						this.camera.lookAt( this.cameraTarget );
+						this.camera.updateProjectionMatrix();
+
+						console.log(this.camera);
+
+						// console.log(- ( objects.children[10].geometry.boundingBox.max.x + objects.children[10].geometry.boundingBox.min.x ) / 2);  
+			            // console.log(- ( objects.children[10].geometry.boundingBox.max.y + objects.children[10].geometry.boundingBox.min.y ) / 2);  
+			            // console.log(- ( objects.children[10].geometry.boundingBox.max.z + objects.children[10].geometry.boundingBox.min.z ) / 2);  
+			            // console.log( objects.children[10].geometry.center() ); 
+						console.log(objects.children[10]);
 						scope._reportProgress( { detail: { text: '' } } );
 					};
 					// https://threejs.org/examples/obj/male02/
@@ -69,7 +105,8 @@ class Page extends React.Component {
 						objLoader.getLogger().setDebug( true );
 						objLoader.load( threeConfig.loadfile, callbackOnLoad, null, null, null, false );
 					};
-					objLoader.loadMtl( threeConfig.loadmtl, '', null, onLoadMtl );
+					objLoader.loadMtl( threeConfig.loadmtl, 'center', null, onLoadMtl );
+
 				};
 				OBJLoader2Example.prototype._reportProgress = function( event ) {
 					var output = Validator.verifyInput( event.detail.text, '' );
@@ -87,12 +124,14 @@ class Page extends React.Component {
 				OBJLoader2Example.prototype.resetCamera = function () {
 					this.camera.position.copy( this.cameraDefaults.posCamera );
 					this.cameraTarget.copy( this.cameraDefaults.posCameraTarget );
-					this.updateCamera();
+					// this.updateCamera();
 				};
 				OBJLoader2Example.prototype.updateCamera = function () {
 					this.camera.aspect = this.aspectRatio;
+					// console.log(this.cameraTarget);
 					this.camera.lookAt( this.cameraTarget );
 					this.camera.updateProjectionMatrix();
+					// console.log(this.camera);
 				};
 				OBJLoader2Example.prototype.render = function () {
 					if ( ! this.renderer.autoClear ) this.renderer.clear();
@@ -118,15 +157,13 @@ class Page extends React.Component {
     }
 
     componentDidMount() {
-      this.load3d();
+      	this.load3d();
     }
     render() {
         return (
-            <div id="threeiframe">
-              <div id="glFullscreen">
-                <canvas id="example"></canvas>
-              </div>
-            </div>
+            <div id="glFullscreen">
+            	<canvas id="example"></canvas>
+          	</div>
         );
     }
 }
@@ -135,8 +172,8 @@ const mapStateToProps = ({}) => {
     const threeConfig = {
         // loadfile : "https://threejs.org/examples/obj/female02/female02.obj",
         // loadmtl : "https://threejs.org/examples/obj/female02/female02.mtl",
-        loadfile : "obj/1.obj",
-        loadmtl : "obj/1.mtl"
+        loadfile : "obj/500T-1.obj",
+        loadmtl : "obj/500T-1.mtl"
     }
     return threeConfig;
 }

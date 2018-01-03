@@ -19,32 +19,31 @@ class Page extends React.Component {
         };
     }
     componentDidMount() {
-        let threeiframe = document.getElementById("threeiframe");
-        threeiframe.style.display="block";
-        threeiframe.style.width=`${window.innerWidth-200-401}px`;
-        threeiframe.style.height=`${window.innerHeight}px`;
-
+        // let threeiframe = document.getElementById("threeiframe");
+        // threeiframe.style.display="block";
+        // threeiframe.style.width=`${window.innerWidth-200-401}px`;
+        // threeiframe.style.height=`${window.innerHeight}px`;
           window.addEventListener('resize', this.onWindowResize);
     }
     // componentDidMount() {
     //     window.addEventListener('resize', this.onWindowResize);
     // }
     componentWillUnmount() {
-        document.getElementById("threeiframe").style.display="none";
+        // document.getElementById("threeiframe").style.display="none";
         window.removeEventListener('resize', this.onWindowResize);
     }
 
     onWindowResize=()=> {
-        window.clearTimeout(resizetimecontent);
-        resizetimecontent = window.setTimeout(()=>{
-            this.setState({
-                innerHeight: window.innerHeight
-            });
-            let threeiframe = document.getElementById("threeiframe");
-            threeiframe.style.width=`${window.innerWidth-200-401}px`;
-            threeiframe.style.height=`${window.innerHeight}px`;
+        // window.clearTimeout(resizetimecontent);
+        // resizetimecontent = window.setTimeout(()=>{
+        //     this.setState({
+        //         innerHeight: window.innerHeight
+        //     });
+        //     let threeiframe = document.getElementById("threeiframe");
+        //     threeiframe.style.width=`${window.innerWidth-200-401}px`;
+        //     threeiframe.style.height=`${window.innerHeight}px`;
 
-        }, 10)
+        // }, 10)
     }
     render() {
         return (

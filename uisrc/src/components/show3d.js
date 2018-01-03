@@ -11,6 +11,8 @@ import MTLLoader from "../3djs/MTLLoader";
 import OBJLoader from "../3djs/OBJLoader";
 import {loadurl} from '../util';
 import Iframe from 'react-iframe'
+import View3d from './view3d';
+
 
 const promisifyLoad = (loader) => {
   function onProgress(xhr) {
@@ -209,6 +211,7 @@ class Page extends React.Component {
                 <div className="title">
                     MSQ摆台
                 </div>
+                <View3d />
                 <div 
                     className="Viewer"
                     ref={(root) => {

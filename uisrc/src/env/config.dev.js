@@ -4,7 +4,8 @@ let config = {
     requesttimeout:5000,
     appversion:'1.0.0',
     sendlocationinterval:20000,
-    softmode:'app'
+    softmode:'app',
+    title : "制药废水生物强化处理装备"
 };
 
 export default config;

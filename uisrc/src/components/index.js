@@ -19,9 +19,9 @@ class Page extends React.Component {
     //
     // }
     componentDidMount() {
-      let threeiframe = document.getElementById("threeiframe");
-      console.log(threeiframe);
-      threeiframe.style.display="none";
+      // let threeiframe = document.getElementById("threeiframe");
+      // console.log(threeiframe);
+      // threeiframe.style.display="none";
 
       window.addEventListener('resize', this.onWindowResize);
     }
