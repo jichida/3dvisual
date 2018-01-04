@@ -8,7 +8,6 @@
 .setfromPage .title{
     text-align: center;
     line-height: 40px;
-    border-bottom: 1px solid #CCC;
 }
 .setfrom .nav{
     display: -webkit-box;
@@ -21,6 +20,8 @@
     padding: 0 20px;
     line-height: 40px;
     border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    background: #EEE;
 }
 .setfrom .li{
     line-height: 40px;
@@ -36,4 +37,12 @@
     -webkit-box-align: center;
     align-items: center;
     -webkit-align-items: center;
+}
+.setfrom .li.lnk{
+    display: block;
+    flex-grow: 1;
+}
+.setfrom .li.lnk:hover{
+    background: #F4F4F4;
+    cursor: pointer;
 }

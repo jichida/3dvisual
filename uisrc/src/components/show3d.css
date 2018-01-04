@@ -6,6 +6,13 @@
     min-width: 200px;
     flex-shrink: 0;
     flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
 }
 .show3dPage .title{
     text-align: center;
@@ -34,5 +41,24 @@
 }
 .three{
     flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
 }
-
+#glFullscreen{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+}
+#glFullscreen #example{
+    flex-grow: 1;
+}

@@ -6,10 +6,12 @@ class Page extends React.Component {
         super(props);
     }
 
-    load3d =()=>{
-      const threeConfig = this.props;
-      const THREE = window.THREE;
-      var OBJLoader2Example = (function () {
+    load3d =(v)=>{
+      	const threeConfig = v;
+		console.log("threeConfig");
+		console.log(threeConfig);
+      	const THREE = window.THREE;
+      	var OBJLoader2Example = (function () {
 				var Validator = THREE.LoaderSupport.Validator;
 				function OBJLoader2Example( elementToBindTo ) {
 					this.renderer = null;
@@ -115,7 +117,7 @@ class Page extends React.Component {
 				OBJLoader2Example.prototype.resizeDisplayGL = function () {
 					this.controls.handleResize();
 					this.recalcAspectRatio();
-					this.renderer.setSize( this.canvas.offsetWidth, this.canvas.offsetHeight, false );
+					this.renderer.setSize( this.canvas.offsetWidth, window.innerHeight-41, false );
 					this.updateCamera();
 				};
 				OBJLoader2Example.prototype.recalcAspectRatio = function () {
@@ -157,8 +159,21 @@ class Page extends React.Component {
     }
 
     componentDidMount() {
-      	this.load3d();
+      	this.load3d({
+        	loadfile : `obj/${this.props.showmodel}.obj`,
+        	loadmtl : `obj/${this.props.showmodel}.mtl`
+		});
     }
+
+    componentWillReceiveProps (nextProps) {
+		if(nextProps.showmodel !== this.props.showmodel){
+			this.load3d({
+	        	loadfile : `obj/${nextProps.showmodel}.obj`,
+	        	loadmtl : `obj/${nextProps.showmodel}.mtl`
+			});
+		}
+	}
+
     render() {
         return (
             <div id="glFullscreen">
@@ -168,13 +183,7 @@ class Page extends React.Component {
     }
 }
 
-const mapStateToProps = ({}) => {
-    const threeConfig = {
-        // loadfile : "https://threejs.org/examples/obj/female02/female02.obj",
-        // loadmtl : "https://threejs.org/examples/obj/female02/female02.mtl",
-        loadfile : "obj/500T-1.obj",
-        loadmtl : "obj/500T-1.mtl"
-    }
-    return threeConfig;
+const mapStateToProps = ({data:{showmodel,device}}) => {
+    return { showmodel,device };
 }
 export default connect(mapStateToProps)(Page);

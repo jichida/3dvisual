@@ -9,16 +9,22 @@ import "./navtitle.css";
 
 
 class Page extends React.Component {
+    
+    back=()=>{
+        this.props.history.goBack();
+    }
+
     render() {
         return (
             <div className="navtitle">
-                <a href="">首目录</a>
-                <span>&gt;</span>
-                <a href="">气源</a>
-                <span>&gt;</span>
-                <span>气源处理元件</span>
+                <a onClick={this.back}>首页</a>
+                <span> &gt;</span>
+                <span>{this.props.showmodel}</span>
             </div>
         );
     }
 }
-export default Page;
+const mapStateToProps = ({data:{showmodel}}) => {
+    return { showmodel };
+}
+export default connect(mapStateToProps)(Page);

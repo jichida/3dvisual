@@ -57,8 +57,7 @@ class Page extends React.Component {
                 <Bomlist />
                 <div className="content">
                     <div className="three">
-                        <Navtitle />
-                        <Show3d />
+                        <Show3d history={this.props.history} />
                     </div>
                     <div className="cad">
                         <Setfrom />
