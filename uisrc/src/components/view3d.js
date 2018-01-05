@@ -168,7 +168,7 @@ class Page extends React.Component {
 	        	loadfile : `obj/${this.props.showmodel}.obj`,
 	        	loadmtl : `obj/${this.props.showmodel}.mtl`
 			});
-		},1000);
+		},500);
     }
 
     componentWillReceiveProps (nextProps) {

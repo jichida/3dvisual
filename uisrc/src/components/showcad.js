@@ -81,7 +81,7 @@ class Page extends React.Component {
                                             className="Demo-swiper__slide"
                                             key={i}
                                             >
-                                            <img src={`img/${v}.jpg`} />
+                                            <img src={`img/${v}.jpg`} style={{maxHeight: `${Math.floor(this.state.innerHeight/2)-42}px`}}/>
                                         </Slide>
                                     );
                                 })

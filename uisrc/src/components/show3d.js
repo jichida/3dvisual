@@ -15,6 +15,7 @@ class Page extends React.Component {
             <div className="show3dPage">
                 <div className="title">
                     {this.props.showmodel}
+                    <a onClick={this.props.history.goBack}>返回选参</a>
                 </div>
                 <View3d />
             </div>
