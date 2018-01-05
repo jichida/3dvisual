@@ -8,8 +8,8 @@ class Page extends React.Component {
 
     load3d =(v)=>{
       	const threeConfig = v;
-		console.log("threeConfig");
-		console.log(threeConfig);
+		// console.log("threeConfig");
+		// console.log(threeConfig);
       	const THREE = window.THREE;
       	var OBJLoader2Example = (function () {
 				var Validator = THREE.LoaderSupport.Validator;
@@ -163,6 +163,12 @@ class Page extends React.Component {
         	loadfile : `obj/${this.props.showmodel}.obj`,
         	loadmtl : `obj/${this.props.showmodel}.mtl`
 		});
+		window.setTimeout(()=>{
+			this.load3d({
+	        	loadfile : `obj/${this.props.showmodel}.obj`,
+	        	loadmtl : `obj/${this.props.showmodel}.mtl`
+			});
+		},1000);
     }
 
     componentWillReceiveProps (nextProps) {

@@ -11,7 +11,103 @@
     border-bottom: 1px solid #CCC;
 }
 .showcadPage img{
-    width: 100%;
+    max-width: 100%;
 }
 
+.showcadbig{
+	position: fixed;
+	right: 260px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: -webkit-box;
+    display: -ms-flexbox;
+   	display: flex;
+   	display: -webkit-flex;
+   	-moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    z-index: 10000;
+}
+.showcadbig .showcad >div{
+	width: 100%;
+}
+.showcadbig .title{
+	border-top: none;
+	position: relative;
+}
+.showcadbig .showcad{
+	display: -webkit-box;
+    display: -ms-flexbox;
+   	display: flex;
+   	display: -webkit-flex;
+   	flex-grow: 1;
+   	overflow: hidden;
+}
+.showcadbig .showcad>div .swiper-container.swiper-container-horizontal{
+	background: #FFF;
+}
+.showcadPage .title a.showbig,
+.showcadbig .title a.hideshowbig{
+	position: absolute;
+	right: 0;
+	height: 41px;
+	width: 41px;
+	top: 1px;
+	display: -webkit-box;
+    display: -ms-flexbox;
+   	display: flex;
+   	display: -webkit-flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	background: #DDD;
+	z-index: 100;
+	display: block;
+}
+.showcadbig .title a.hideshowbig{
+	height: 40px;
+	width: 40px;
+	top: 0px;
+}
+.showcadbig .title a.hideshowbig:before{
+	content: "";
+	display: block;
+	height: 2px;
+	width: 18px;
+	background: #000;
+	position: absolute;
+	top: 18px;
+	left: 10px;
+	transform:rotate(45deg);
+	-moz-transform:rotate(45deg); 	/* Firefox */
+	-webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+}
+.showcadbig .title a.hideshowbig:after{
+	content: "";
+	display: block;
+	height: 2px;
+	width: 18px;
+	background: #000;
+	position: absolute;
+	top: 18px;
+	left: 10px;
+	transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg); 	/* Firefox */
+	-webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
+}
+.showcadPage .title a.showbig:before{
+	content: "";
+	display: block;
+	height: 12px;
+	width: 18px;
+	border: 2px solid #000;
+	position: absolute;
+	top: 12px;
+	left: 13px;
+}
 

@@ -5,7 +5,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Bomlist from './bomlist';
 import Show3d from './show3d';
-import Showcad from './showcad';
 import Setfrom from './setfrom';
 import Navtitle from './navtitle';
 import "./index.css";
@@ -61,7 +60,6 @@ class Page extends React.Component {
                     </div>
                     <div className="cad">
                         <Setfrom />
-                        <Showcad />
                     </div>
                 </div>
             </div>

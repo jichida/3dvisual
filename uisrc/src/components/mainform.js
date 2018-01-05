@@ -83,7 +83,7 @@ class Page extends React.Component {
                 >
                 <img src={Bg} style={{width: "100%", height: `${this.state.innerHeight}px`}} />
                 <div className="maincontent">
-                    <div className="mainwamp">
+                    <div className="mainwamp mainformwamp">
                         <div className="cont">
                             <div className="title">{Config.title}</div>
                             <div className="formc">
@@ -132,7 +132,7 @@ class Page extends React.Component {
                                         </Select>
                                     </div>
                                     <div className="btn" onClick={this.subform}>
-                                        <span>确定</span>
+                                        <span className="l"></span><span className="r">确定</span>
                                     </div>
                                 </div>
                             </div>

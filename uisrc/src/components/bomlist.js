@@ -8,6 +8,7 @@ import 'antd/dist/antd.css';
 import './bomlist.css';
 import Device from '../data/device';
 import _ from 'lodash';
+import Showcad from './showcad';
 const TreeNode = Tree.TreeNode;
 let resizetimecontent = null;
 
@@ -36,37 +37,43 @@ class Page extends React.Component {
 
     render() {
         return (
-            <div className="bomPage" style={{width: `${this.state.innerWidth*.2}px`}}>
-                <div className="title">
-                    BOM表
-                </div>
-                { !!this.props.bomlist &&
-                    <div className="bomlist">
-                        <div className="bomli bomlitit">
-                            <span>名称</span>
-                            <span>性能参数</span>
-                            <span>配电功率(Kw)</span>
-                            <span>数量</span>
-                            <span>备注</span>
-                        </div>
-
-                        {
-                            _.map(this.props.bomlist, (v, i)=>{
-                                return (
-                                    <div className="bomli" key={i}>
-                                        <span className="tt">{i}</span>
-                                        {_.map(v, (v2, i2)=>{
-                                            return (
-                                                <span className="vv">{v2}</span>
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            })
-                        }
+            <div className="bomPage" style={{width: `${this.state.innerWidth*.3}px`}}>
+                <div className="bomcontent">
+                    <div>
+                    <div className="title">
+                        BOM表
                     </div>
-                }
-                { !this.props.bomlist && <div className="nodata">暂无数据</div>}
+                    { !!this.props.bomlist &&
+                        <div className="bomlist">
+                            <div className="bomli bomlitit">
+                                <span>名称</span>
+                                <span>性能参数</span>
+                                <span>功率(Kw)</span>
+                                <span>数量</span>
+                                <span>备注</span>
+                            </div>
+
+                            {
+                                _.map(this.props.bomlist, (v, i)=>{
+                                    return (
+                                        <div className="bomli" key={i}>
+                                            <span className="tt">{i}</span>
+                                            {_.map(v, (v2, i2)=>{
+                                                return (
+                                                    <span className="vv">{v2}</span>
+                                                )
+                                            })}
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    }
+                    { !this.props.bomlist && <div className="nodata">暂无数据</div>}
+                    </div>
+                </div>
+
+                <div className="leftshowcad"><Showcad /></div>
             </div>
         );
     }

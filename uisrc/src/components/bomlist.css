@@ -6,8 +6,44 @@
     min-width: 200px;
     flex-shrink: 0;
     border-right: 1px solid #CCC;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
 }
-.bomPage .title{
+.bomPage >div{
+    flex-grow: 1;
+    overflow: hidden;
+}
+.bomPage >div.bomcontent,
+.bomPage >div.leftshowcad{
+    overflow: hidden;
+    position: relative;
+}
+.bomPage >div.bomcontent>div,
+.bomPage >div.leftshowcad>div{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-y: hidden;
+}
+.bomPage >div.bomcontent>div{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+}
+.bomPage >div.bomcontent >div .title{
     text-align: center;
     line-height: 40px;
     border-bottom: 1px solid #CCC;
@@ -31,6 +67,8 @@
 }
 .bomlist{
     padding: 0 5px;
+    overflow-y: scroll;
+    flex-grow: 1;
 }
 .bomli{
     padding:  10px 0;

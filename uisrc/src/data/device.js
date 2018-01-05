@@ -194,6 +194,27 @@ export default {
             "厌氧反应器进水泵" : { "性能参数" : "Q=100m^3/h H=16m", "配电功率(Kw)" : "7.5", "数量" : "2台", "备注":"1用1备"},
             "水封器" : { "性能参数" : "∅0.6*1.2", "配电功率(Kw)" : "", "数量" : "1台", "备注":"SUS304"},
         }
+    },
+    cad : {
+        "500T-1" : ["500T-1_1"],
+        "500T-2" : ["500T-2_1"],
+        "500T-3" : ["500T-3_1"],
+        "500T-6" : ["500T-6_1"],
+        "500T-7" : ["500T-7_1"],
+        "500T-8" : ["500T-8_1"],
+        "500T-9" : ["500T-9_1"],
+        "500T-12" : ["500T-12_1"],
+        "500T-13" : ["500T-13_1"],
+        "500T-14" : ["500T-14_1"],
+        "A2O-chi" : ["A2O-chi_1","A2O-chi_2"],
+        "EGSB-fanyingqi" : ["EGSB-fanyingqi_1","EGSB-fanyingqi_2"],
+        "MBBR-chi" : ["MBBR-chi_1","MBBR-chi_2"],
+        "SBR-chi" : ["SBR-chi_1","SBR-chi_2"],
+        "SCMBR-chi" : ["SCMBR-chi_1","SCMBR-chi_2"],
+        "shengwulvchi" : ["shengwulvchi_1","shengwulvchi_2"],
+        "shuijieshenhuaguan" : ["shuijieshenhuaguan_1","shuijieshenhuaguan_2"],
+        "UASB-fanyingqi" : ["UASB-fanyingqi_1","UASB-fanyingqi_2"],
+        "zhongjianshuichi" : ["zhongjianshuichi_1"]
     }
     
 };

@@ -27,12 +27,9 @@ class Page extends React.Component {
         console.log(device);
         return (
             <div className="setfromPage">
-                <div className="title">
-                    参数配置
-                </div>
                 {   !!device &&
                     <div className="setfrom">
-                        <div className="nav">
+                        <div className="nav" style={{borderTop: "none"}}>
                             <span>属性</span><span>值</span>
                         </div>
                         <div className="li">
