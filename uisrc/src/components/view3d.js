@@ -33,13 +33,15 @@ class Page extends React.Component {
 				OBJLoader2Example.prototype.initGL = function () {
 					this.renderer = new THREE.WebGLRenderer( {
 						canvas: this.canvas,
+            preserveDrawingBuffer:true,
+            precision:'highp',
 						antialias: true,
 						autoClear: true
 					} );
 					this.renderer.setClearColor( 0xFFFFFF );
 					this.scene = new THREE.Scene();
 					this.camera = new THREE.PerspectiveCamera( this.cameraDefaults.fov, this.aspectRatio, this.cameraDefaults.near, this.cameraDefaults.far );
-					
+
 					// this.camera.setFocalLength ( 330 );
 					// this.camera.lookAt( this.cameraTarget );
 
@@ -47,8 +49,8 @@ class Page extends React.Component {
 					this.controls = new THREE.TrackballControls( this.camera, this.renderer.domElement );
 					// this.controls = new THREE.FirstPersonControls( this.camera, this.renderer.domElement );
 
-					// this.controls.movementSpeed = 500;  
-		   //          this.controls.lookSpeed = 0.1;  
+					// this.controls.movementSpeed = 500;
+		   //          this.controls.lookSpeed = 0.1;
 		   //          this.controls.lookVertical = true;
 
 					var ambientLight = new THREE.AmbientLight( 0xFFFFFF );
@@ -74,10 +76,10 @@ class Page extends React.Component {
 
 						var objects = event.detail.loaderRootNode;
 						// console.log(objects)
-						// objects.children[10].geometry.computeBoundingBox(); 
+						// objects.children[10].geometry.computeBoundingBox();
 						// console.log(objects);
 						// console.log(objects.children[10].geometry.boundingBox.max.x);
-						// objects.rotation.x = THREE.Math.degToRad( 45 );  
+						// objects.rotation.x = THREE.Math.degToRad( 45 );
 						// objects.rotation.y = THREE.Math.degToRad( 45 );
 						console.log(scope.cameraTarget);
 						// for ( var i = 0; i < objects.children.length; i ++ ) {
@@ -91,10 +93,10 @@ class Page extends React.Component {
 
 						console.log(this.camera);
 
-						// console.log(- ( objects.children[10].geometry.boundingBox.max.x + objects.children[10].geometry.boundingBox.min.x ) / 2);  
-			            // console.log(- ( objects.children[10].geometry.boundingBox.max.y + objects.children[10].geometry.boundingBox.min.y ) / 2);  
-			            // console.log(- ( objects.children[10].geometry.boundingBox.max.z + objects.children[10].geometry.boundingBox.min.z ) / 2);  
-			            // console.log( objects.children[10].geometry.center() ); 
+						// console.log(- ( objects.children[10].geometry.boundingBox.max.x + objects.children[10].geometry.boundingBox.min.x ) / 2);
+			            // console.log(- ( objects.children[10].geometry.boundingBox.max.y + objects.children[10].geometry.boundingBox.min.y ) / 2);
+			            // console.log(- ( objects.children[10].geometry.boundingBox.max.z + objects.children[10].geometry.boundingBox.min.z ) / 2);
+			            // console.log( objects.children[10].geometry.center() );
 						console.log(objects.children[10]);
 						scope._reportProgress( { detail: { text: '' } } );
 					};
