@@ -80,6 +80,7 @@ class Page extends React.Component {
                                         <Slide
                                             className="Demo-swiper__slide"
                                             key={i}
+                                            style={{textAlign: "center"}}
                                             >
                                             <img src={`img/${v}.jpg`} style={{maxHeight: `${Math.floor(this.state.innerHeight/2)-42}px`}}/>
                                         </Slide>
