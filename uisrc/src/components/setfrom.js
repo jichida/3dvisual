@@ -8,6 +8,7 @@ import './setfrom.css';
 import { Select } from 'antd';
 import _ from 'lodash';
 import {set_showmodel} from '../actions';
+import Devicedata from '../data/device';
 
 const Option = Select.Option;
 
@@ -25,6 +26,8 @@ class Page extends React.Component {
     render() {
         const { device, showmodel } = this.props;
         console.log(device);
+        console.log("Devicedata");
+        console.log(Devicedata);
         return (
             <div className="setfromPage">
                 {   !!device &&
@@ -33,16 +36,16 @@ class Page extends React.Component {
                             <span>属性</span><span>值</span>
                         </div>
                         <div className="li">
-                            <span>水处理量：</span><span>{device['水处理量']}吨</span>
+                            <span>水处理量：</span><span>{device['水处理量']} <b> 吨</b></span>
                         </div>
                         <div className="li">
-                            <span>COD：</span><span>{device['COD']}</span>
+                            <span>COD：</span><span>{device['COD']} <b> MG/L</b></span>
                         </div>
                         <div className="li">
-                            <span>氨氮：</span><span>{device['氨氮']}</span>
+                            <span>氨氮：</span><span>{device['氨氮']} <b> MG/L</b></span>
                         </div>
                         <div className="li">
-                            <span>SS：</span><span>{device['SS']}</span>
+                            <span>SS：</span><span>{device['SS']} <b> MG/L</b></span>
                         </div>
                         <div className="nav">
                             <span>总设备：</span>
@@ -54,7 +57,7 @@ class Page extends React.Component {
                             <span>子装备</span>
                         </div>
                         { _.map(device.children, (d, i)=>{
-                            return (<div className="li lnk" key={i} onClick={this.selshowmodel.bind(this,d)}><span>{d}</span></div>)
+                            return (<div className="li lnk" key={i} onClick={this.selshowmodel.bind(this,d)}><span>{Devicedata.namedata[d]}</span></div>)
                         }) }
                     </div>
                 }

@@ -16,7 +16,8 @@ class Page extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            innerWidth: window.innerWidth
+            innerWidth: window.innerWidth,
+            innerHeight: window.innerHeight
         };
     }
     componentDidMount() {
@@ -30,12 +31,16 @@ class Page extends React.Component {
         window.clearTimeout(resizetimecontent);
         resizetimecontent = window.setTimeout(()=>{
             this.setState({
-                innerWidth: window.innerWidth
+                innerWidth: window.innerWidth,
+                innerHeight: window.innerHeight
             });
         }, 10)
     }
 
     render() {
+        const domtype = this.props.showmodel.split("-")[0];
+        const isfather = domtype ==="500T";
+
         return (
             <div className="bomPage" style={{width: `${this.state.innerWidth*.3}px`}}>
                 <div className="bomcontent">
@@ -69,7 +74,14 @@ class Page extends React.Component {
                             }
                         </div>
                     }
-                    { !this.props.bomlist && <div className="nodata">暂无数据</div>}
+                    { !this.props.bomlist && <div className="nodata">
+                        {   !!isfather && 
+                            <img src={`liucheng/${this.props.showmodel}-liucheng.jpg`} style={{height:`${(this.state.innerHeight/2)-45}px`, width: "auto", maxWidth: "100%"}} />
+                        }
+                        {   !isfather && 
+                            <span>暂无数据</span>
+                        }
+                    </div>}
                     </div>
                 </div>
 
@@ -83,6 +95,6 @@ const mapStateToProps = ({data:{showmodel}}) => {
     if(!!showmodel && !!Device.bomdata[showmodel]){
         bomlist = Device.bomdata[showmodel];
     }
-    return { bomlist };
+    return { bomlist, showmodel };
 }
 export default connect(mapStateToProps)(Page);

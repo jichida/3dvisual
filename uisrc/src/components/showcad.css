@@ -32,6 +32,14 @@
 }
 .showcadbig .showcad >div{
 	width: 100%;
+	display: -webkit-box;
+    display: -ms-flexbox;
+   	display: flex;
+   	display: -webkit-flex;
+   	-webkit-box-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	background:  #FFF;
 }
 .showcadbig .title{
 	border-top: none;
@@ -44,9 +52,41 @@
    	display: -webkit-flex;
    	flex-grow: 1;
    	overflow: hidden;
+   	background-color: #FFF;
 }
 .showcadbig .showcad>div .swiper-container.swiper-container-horizontal{
 	background: #FFF;
+}
+.showcadPage{
+	display: -webkit-box;
+    display: -ms-flexbox;
+   	display: flex;
+   	display: -webkit-flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-align-items: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+}
+.showcadPage .showcad{
+	flex-grow: 1;
+	display: -webkit-box;
+    display: -ms-flexbox;
+   	display: flex;
+   	display: -webkit-flex;
+   	flex-grow: 1;
+   	overflow: hidden;
+   	align-items: center;
+	-webkit-align-items: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+}
+.showcadPage .title{
+	width: 100%;
 }
 .showcadPage .title a.showbig,
 .showcadbig .title a.hideshowbig{

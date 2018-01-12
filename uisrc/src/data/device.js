@@ -215,6 +215,19 @@ export default {
         "shuijieshenhuaguan" : ["shuijieshenhuaguan_1","shuijieshenhuaguan_2"],
         "UASB-fanyingqi" : ["UASB-fanyingqi_1","UASB-fanyingqi_2"],
         "zhongjianshuichi" : ["zhongjianshuichi_1"]
+    },
+    namedata : {
+        "shuijieshenhuaguan" : "水解生化罐",
+        "SBR-chi" : "SBR池",
+        "zhongjianshuichi" : "中间水池",
+        "shengwulvchi" : "生物滤池",
+        "SCMBR-chi" : "SCMBR池",
+        "MBBR-chi" : "MBBR池",
+        "A2O-chi" : "A2O池",
+        "chendianchi" : "沉淀池",
+        "UASB-fanyingqi" : "UASB反应器",
+        "shengwulvchi" : "生物滤池",
+        "EGSB-fanyingqi" : "EGSB反应器",
     }
     
 };

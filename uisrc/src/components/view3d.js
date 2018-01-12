@@ -33,8 +33,8 @@ class Page extends React.Component {
 				OBJLoader2Example.prototype.initGL = function () {
 					this.renderer = new THREE.WebGLRenderer( {
 						canvas: this.canvas,
-            preserveDrawingBuffer:true,
-            precision:'highp',
+            			preserveDrawingBuffer:true,
+            			precision:'highp',
 						antialias: true,
 						autoClear: true
 					} );
