@@ -24,7 +24,8 @@ class Page extends React.Component {
     }
 
     render() {
-        const { device, showmodel } = this.props;
+        const { device, showmodel,formdata } = this.props;
+        const { FeiShui, COD, AD, SS, PH, BOD5, ZYJT, ZL, ZX, ZQHW, ZLS, ZYD } = formdata;
         console.log(device);
         console.log("Devicedata");
         console.log(Devicedata);
@@ -32,21 +33,20 @@ class Page extends React.Component {
             <div className="setfromPage">
                 {   !!device &&
                     <div className="setfrom">
-                        <div className="nav" style={{borderTop: "none"}}>
-                            <span>属性</span><span>值</span>
-                        </div>
-                        <div className="li">
-                            <span>水处理量：</span><span>{device['水处理量']} <b> 吨</b></span>
-                        </div>
-                        <div className="li">
-                            <span>COD：</span><span>{device['COD']} <b> MG/L</b></span>
-                        </div>
-                        <div className="li">
-                            <span>氨氮：</span><span>{device['氨氮']} <b> MG/L</b></span>
-                        </div>
-                        <div className="li">
-                            <span>SS：</span><span>{device['SS']} <b> MG/L</b></span>
-                        </div>
+                        <div className="nav" style={{borderTop: "none"}}><span>属性</span><span>值</span></div>
+                        <div className="li"><span>水处理量：</span><span>{FeiShui} <b> 吨</b></span></div>
+                        <div className="li"><span>化学需氧量(CODCr)：</span><span>{COD} <b> mg/L</b></span></div>
+                        <div className="li"><span>氨氮：</span><span>{AD} <b> mg/L</b></span></div>
+                        <div className="li"><span>悬浮物SS：</span><span>{SS} <b> mg/L</b></span></div>
+                        <div className="li"><span>PH值：</span><span>{PH} <b> mg/L</b></span></div>
+                        <div className="li"><span>五日生化需氧量(BOD5)：</span><span>{BOD5} <b> mg/L</b></span></div>
+                        <div className="li"><span>总有机碳：</span><span>{ZYJT} <b> mg/L</b></span></div>
+                        <div className="li"><span>总磷：</span><span>{ZL} <b> mg/L</b></span></div>
+                        <div className="li"><span>总锌：</span><span>{ZX} <b> mg/L</b></span></div>
+                        <div className="li"><span>总氰化物：</span><span>{ZQHW} <b> mg/L</b></span></div>
+                        <div className="li"><span>硫酸盐：</span><span>{ZLS} <b> mg/L</b></span></div>
+                        <div className="li"><span>盐度：</span><span>{ZYD} <b> mg/L</b></span></div>
+
                         <div className="nav">
                             <span>总设备：</span>
                         </div>
@@ -65,7 +65,7 @@ class Page extends React.Component {
         );
     }
 }
-const mapStateToProps = ({data:{showmodel,device}}) => {
-    return {showmodel, device};
+const mapStateToProps = ({data:{showmodel,device,formdata}}) => {
+    return {showmodel, device, formdata};
 }
 export default connect(mapStateToProps)(Page);

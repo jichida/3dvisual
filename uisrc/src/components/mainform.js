@@ -80,9 +80,23 @@ class Page extends React.Component {
 
     subform=()=>{
         const {selected_sl,selected_cod,selected_ad,selected_ss} = this.props;
+        const {FeiShui, COD, AD, SS} = this.state;
 
         let curdevice = _.find(Device.devicelist, (o)=>{
-            return (selected_sl===o["水处理量"] &&selected_cod===o["COD"] && selected_ad===o["氨氮"] && selected_ss===o["SS"] )
+            let SL_min = parseInt(o["水处理量"].split("~")[0]);
+            let SL_max = parseInt(o["水处理量"].split("~")[1]);
+            let COD_min = parseInt(o["COD"].split("~")[0]);
+            let COD_max = parseInt(o["COD"].split("~")[1]);
+            let AD_min = parseInt(o["氨氮"].split("~")[0]);
+            let AD_max = parseInt(o["氨氮"].split("~")[1]);
+            let SS_mix = parseInt(o["SS"].split("~")[0]);
+            let SS_max = parseInt(o["SS"].split("~")[1]);
+            return (
+                FeiShui > SL_min && FeiShui < SL_max &&
+                COD > COD_min && COD < COD_max &&
+                AD > AD_min && AD < AD_max &&
+                SS > SS_mix && SS < SS_max
+            )
         })
         if(!!curdevice){
             this.props.dispatch(set_device(curdevice));
